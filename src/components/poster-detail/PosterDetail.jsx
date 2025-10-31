@@ -3,8 +3,7 @@ import { useScrollToTopEffect } from "../../shared/useScrollToTopEffect";
 import "./PosterDetail.css";
 
 export const PosterDetail = ({ poster, onClose }) => {
-  const contentRef = useRef(null);
-  useScrollToTopEffect("auto", contentRef, poster);
+  const contentRef = useScrollToTopEffectForDetail(poster);
 
   if (!poster) {
     return null;
@@ -37,4 +36,15 @@ export const PosterDetail = ({ poster, onClose }) => {
       </div>
     </article>
   );
+};
+
+const useScrollToTopEffectForDetail = (poster) => {
+  const contentRef = useRef(null);
+
+  /** Needed on mobile */
+  useScrollToTopEffect("auto", window, poster);
+  /** Needed on desktop */
+  useScrollToTopEffect("auto", contentRef, poster);
+
+  return contentRef;
 };
