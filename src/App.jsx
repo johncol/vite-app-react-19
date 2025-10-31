@@ -1,4 +1,4 @@
-import React, { Activity, useState } from "react";
+import { Activity, useState } from "react";
 import { PosterGrid } from "./components/poster-grid/PosterGrid";
 import { PosterDetail } from "./components/poster-detail/PosterDetail";
 import "./App.css";

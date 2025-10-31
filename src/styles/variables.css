@@ -1,0 +1,80 @@
+:root {
+  /* Breakpoints */
+  /* Note: CSS variables cannot be used in media query conditions (@media (max-width: var(--breakpoint-mobile))).
+     They must use literal values (e.g., 900px). This variable is kept for reference/documentation only. */
+  --breakpoint-mobile: 900px;
+
+  /* Colors - Dark mode (default) */
+  --color-text-primary: rgba(255, 255, 255, 0.87);
+  --color-background: #242424;
+  --color-button-bg: #1a1a1a;
+  --color-button-hover-border: #646cff;
+  --color-focus-outline: 4px auto -webkit-focus-ring-color;
+  --color-poster-detail-bg: rgba(237, 239, 231, 0.5);
+  --color-button-close-bg: #000;
+  --color-button-close-text: #fff;
+  --color-text-secondary: #333;
+  --color-text-heading: #213547;
+
+  /* Colors - Light mode */
+  --color-text-primary-light: #213547;
+  --color-background-light: #ffffff;
+  --color-button-bg-light: #f9f9f9;
+  --color-button-hover-border-light: #747bff;
+
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3.2em;
+
+  /* Border Radius */
+  --border-radius-sm: 5px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 10px;
+
+  /* Shadows */
+  --shadow-sm: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  --shadow-text: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Grid */
+  --grid-column-width-desktop: 300px;
+  --grid-column-width-mobile: 200px;
+  --grid-gap-desktop: 20px;
+  --grid-gap-mobile: 5px;
+
+  /* Layout */
+  --container-max-width: 1600px;
+  --container-max-height: 90vh;
+  --container-padding-desktop: 2rem;
+  --container-padding-mobile: 10px;
+
+  /* Typography */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --line-height-base: 1.5;
+  --line-height-heading: 1.1;
+
+  /* Transitions */
+  --transition-fast: 0.25s;
+  --transition-base: 0.3s ease;
+
+  /* Aspect Ratios */
+  --aspect-ratio-poster: 2/3;
+  --aspect-ratio-detail: 3/2;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text-primary: var(--color-text-primary-light);
+    --color-background: var(--color-background-light);
+    --color-button-bg: var(--color-button-bg-light);
+    --color-button-hover-border: var(--color-button-hover-border-light);
+  }
+}
+

@@ -1,12 +1,12 @@
 .poster-detail {
-  background-color: rgba(237, 239, 231, 0.5);
+  background-color: var(--color-poster-detail-bg);
   margin: 0 auto;
-
-  max-width: 1600px;
-  max-height: 90vh;
-  aspect-ratio: 3/2;
-
+  max-width: var(--container-max-width);
+  max-height: var(--container-max-height);
+  aspect-ratio: var(--aspect-ratio-detail);
   display: flex;
+  border-radius: var(--border-radius-lg);
+
   @media (max-width: 900px) {
     flex-direction: column;
     max-width: 100%;
@@ -14,35 +14,29 @@
     aspect-ratio: auto;
   }
 
-  --border-radius: 10px;
-  border-radius: var(--border-radius);
-
   img {
     width: 50%;
-    
     object-fit: cover;
-    aspect-ratio: 2/3;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    aspect-ratio: var(--aspect-ratio-poster);
+    box-shadow: var(--shadow-md);
+    border-top-left-radius: var(--border-radius-lg);
+    border-bottom-left-radius: var(--border-radius-lg);
 
     @media (max-width: 900px) {
       width: auto;
       border-radius: 0;
-      border-top-right-radius: var(--border-radius);
-      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius-lg);
+      border-top-left-radius: var(--border-radius-lg);
     }
   }
 
   .poster-detail-content {
-    padding: 20px;
+    padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 10px;
-
+    gap: var(--spacing-sm);
     max-height: 100%;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -53,7 +47,7 @@
 
     h1 {
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
     }
 
     p {
@@ -61,16 +55,23 @@
     }
 
     button {
-      background-color: #000;
-      color: #fff;
+      background-color: var(--color-button-close-bg);
+      color: var(--color-button-close-text);
       border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius-sm);
       cursor: pointer;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
       text-transform: uppercase;
     }
-  }
 
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:focus-visible {
+      outline: var(--color-focus-outline);
+    }
+  }
 }

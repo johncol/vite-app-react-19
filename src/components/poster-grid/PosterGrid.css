@@ -1,12 +1,27 @@
 .poster-grid {
-  display: grid;
-  gap: 20px;
+  width: 100%;
+}
 
-  --min-column-width: 300px;
-  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+.poster-grid-list {
+  display: grid;
+  gap: var(--grid-gap-desktop);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--grid-column-width-desktop), 1fr)
+  );
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
   @media (max-width: 900px) {
-    --min-column-width: 200px;
-    gap: 5px;
+    gap: var(--grid-gap-mobile);
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--grid-column-width-mobile), 1fr)
+    );
   }
+}
+
+.poster-grid-list li {
+  margin: 0;
 }
