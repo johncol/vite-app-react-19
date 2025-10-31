@@ -43,6 +43,12 @@
     justify-content: flex-start;
     gap: 10px;
 
+    max-height: 100%;
+    overflow-y: auto;
+    @media (max-width: 900px) {
+      max-height: auto;
+    }
+
     h1 {
       font-size: 2rem;
       font-weight: 600;
@@ -64,4 +70,5 @@
       text-transform: uppercase;
     }
   }
+
 }
