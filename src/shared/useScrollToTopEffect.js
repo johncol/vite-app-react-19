@@ -1,10 +1,20 @@
 import { useEffect } from "react";
 
-export const useScrollToTopEffect = (behavior = "smooth") => {
+export const useScrollToTopEffect = (behavior, elementOrRef, poster) => {
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior,
-    });
-  }, [behavior]);
+    const element =
+      elementOrRef?.current !== undefined ? elementOrRef.current : elementOrRef;
+
+    // Use setTimeout to ensure the ref is attached after React commits
+    const timeoutId = setTimeout(() => {
+      if (element && typeof element.scrollTo === "function") {
+        element.scrollTo({
+          top: 0,
+          behavior,
+        });
+      }
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
+  }, [behavior, elementOrRef, poster]);
 };

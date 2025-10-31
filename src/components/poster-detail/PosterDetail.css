@@ -45,6 +45,8 @@
 
     max-height: 100%;
     overflow-y: auto;
+    scrollbar-width: thin;
+
     @media (max-width: 900px) {
       max-height: auto;
     }

@@ -1,13 +1,15 @@
+import { useRef } from "react";
 import { useScrollToTopEffect } from "../../shared/useScrollToTopEffect";
 import "./PosterDetail.css";
 
 export const PosterDetail = ({ poster, onClose }) => {
-  useScrollToTopEffect("auto");
+  const contentRef = useRef(null);
+  useScrollToTopEffect("auto", contentRef, poster);
 
   return (
-    <article className="poster-detail">
+    <article className="poster-detail" >
       <img src={poster?.image} alt={poster?.title} />
-      <div className="poster-detail-content">
+      <div className="poster-detail-content" ref={contentRef}>
         <h1>{poster?.title}</h1>
         <div>
           {poster?.description.split("\n").map((line, index) => (
