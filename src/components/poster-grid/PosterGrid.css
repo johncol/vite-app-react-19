@@ -1,5 +1,12 @@
 .poster-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+
+  --min-column-width: 300px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+
+  @media (max-width: 900px) {
+    --min-column-width: 200px;
+    gap: 5px;
+  }
 }

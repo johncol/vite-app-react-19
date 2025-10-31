@@ -1,13 +1,23 @@
-import React from "react";
-import "./App.css";
+import React, { Activity, useState } from "react";
 import { PosterGrid } from "./components/poster-grid/PosterGrid";
+import { PosterDetail } from "./components/poster-detail/PosterDetail";
+import "./App.css";
 
 function App() {
+  const [currentPoster, setCurrentPoster] = useState(null);
+
   return (
-    <>
-      <h1>Poster Grid</h1>
-      <PosterGrid />
-    </>
+    <main>
+      <Activity mode={!currentPoster ? "visible" : "hidden"}>
+        <PosterGrid onPosterClick={setCurrentPoster} />
+      </Activity>
+      <Activity mode={currentPoster ? "visible" : "hidden"}>
+        <PosterDetail
+          poster={currentPoster}
+          onClose={() => setCurrentPoster(null)}
+        />
+      </Activity>
+    </main>
   );
 }
 

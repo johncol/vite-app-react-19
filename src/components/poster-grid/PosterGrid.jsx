@@ -1,13 +1,21 @@
+import { useScrollToTopEffect } from "../../shared/useScrollToTopEffect";
 import { posters } from "../../api/posters";
-import { Poster } from "../poster/Poster";
+import { PosterCard } from "../poster-card/PosterCard";
 
 import "./PosterGrid.css";
 
-export const PosterGrid = () => {
+export const PosterGrid = ({ onPosterClick }) => {
+  useScrollToTopEffect("smooth");
+
   return (
     <div className="poster-grid">
       {posters.map((poster) => (
-        <Poster key={poster.title} title={poster.title} image={poster.image} />
+        <PosterCard
+          key={poster.title}
+          title={poster.title}
+          image={poster.image}
+          onClick={() => onPosterClick(poster)}
+        />
       ))}
     </div>
   );
