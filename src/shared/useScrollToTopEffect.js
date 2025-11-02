@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useScrollToTopEffect = (behavior, elementOrRef, poster) => {
+export const useScrollToTopEffect = (behavior, elementOrRef, poster = null) => {
   useEffect(() => {
     const element =
       elementOrRef?.current !== undefined ? elementOrRef.current : elementOrRef;
