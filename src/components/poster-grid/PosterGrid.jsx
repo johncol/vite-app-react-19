@@ -1,10 +1,9 @@
 import { useScrollToTopEffect } from "../../shared/useScrollToTopEffect";
-import { posters } from "../../api/posters";
 import { PosterCard } from "../poster-card/PosterCard";
 
 import "./PosterGrid.css";
 
-export const PosterGrid = ({ onPosterClick }) => {
+export const PosterGrid = ({ posters, onPosterClick }) => {
   useScrollToTopEffect("smooth");
 
   return (

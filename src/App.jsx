@@ -1,6 +1,7 @@
 import { Activity, useState } from "react";
 import { PosterGrid } from "./components/poster-grid/PosterGrid";
 import { PosterDetail } from "./components/poster-detail/PosterDetail";
+import { posters } from "./api/posters";
 import "./App.css";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   return (
     <main>
       <Activity mode={!currentPoster ? "visible" : "hidden"}>
-        <PosterGrid onPosterClick={setCurrentPoster} />
+        <PosterGrid posters={posters} onPosterClick={setCurrentPoster} />
       </Activity>
       <Activity mode={currentPoster ? "visible" : "hidden"}>
         <PosterDetail
