@@ -16,12 +16,10 @@ export const Posters = () => {
         </ViewTransition>
       </Activity>
       <Activity mode={currentPoster ? "visible" : "hidden"}>
-        <ViewTransition>
-          <PosterDetail
-            poster={currentPoster}
-            onClose={() => updatePoster(null)}
-          />
-        </ViewTransition>
+        <PosterDetail
+          poster={currentPoster}
+          onClose={() => updatePoster(null)}
+        />
       </Activity>
     </>
   );

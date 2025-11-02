@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, ViewTransition } from "react";
 import { useScrollToTopEffect } from "../../shared/useScrollToTopEffect";
 import "./PosterDetail.css";
 
@@ -20,7 +20,9 @@ export const PosterDetail = ({ poster, onClose }) => {
       aria-labelledby="poster-title"
       aria-live="polite"
     >
-      <img src={poster.image} alt={poster.title || "Movie poster"} />
+      <ViewTransition name={`poster-${poster.id}`}>
+        <img src={poster.image} alt={poster.title || "Movie poster"} />
+      </ViewTransition>
       <div className="poster-detail-content" ref={contentRef}>
         <h1 id="poster-title">{poster.title}</h1>
         {descriptionLines.length > 0 && (
