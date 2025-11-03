@@ -9,11 +9,17 @@ export const PosterSorter = ({ sortBy }) => {
   const isSticked = useSticked();
 
   const handleFieldChange = (newField) => {
+    if (newField === field) {
+      return;
+    }
     setField(newField);
     sortBy(newField, order);
   };
 
   const handleOrderChange = (newOrder) => {
+    if (newOrder === order) {
+      return;
+    }
     setOrder(newOrder);
     sortBy(field, newOrder);
   };
