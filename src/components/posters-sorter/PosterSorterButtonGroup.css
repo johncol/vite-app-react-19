@@ -1,0 +1,53 @@
+.poster-sorter-button-group {
+  display: flex;
+  gap: var(--spacing-xs);
+  background-color: var(--color-background);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+.poster-sorter-button {
+  padding: 0.5em 1.2em;
+  font-size: 0.9em;
+  font-weight: var(--font-weight-semibold);
+  font-family: inherit;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background-color: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 60px;
+}
+
+.poster-sorter-button:hover {
+  background-color: var(--color-button-bg);
+}
+
+.poster-sorter-button:focus {
+  outline: none;
+}
+
+.poster-sorter-button:focus-visible {
+  outline: var(--color-focus-outline);
+}
+
+.poster-sorter-button.selected {
+  background-color: var(--color-button-hover-border);
+  color: var(--color-background);
+}
+
+.poster-sorter-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .poster-sorter-button-group {
+    flex: 1;
+  }
+
+  .poster-sorter-button {
+    flex: 1;
+  }
+}
+

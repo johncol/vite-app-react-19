@@ -1,0 +1,38 @@
+.poster-sorter {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  background-color: var(--color-button-bg);
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+}
+
+.poster-sorter-field,
+.poster-sorter-order {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.poster-sorter-label {
+  font-size: 0.9em;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 900px) {
+  .poster-sorter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+
+  .poster-sorter-field,
+  .poster-sorter-order {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
