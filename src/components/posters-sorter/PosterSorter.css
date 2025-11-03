@@ -7,6 +7,20 @@
   background-color: var(--color-button-bg);
   border-radius: var(--border-radius-md);
   border: 1px solid transparent;
+
+  @media (min-width: 900px) {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+}
+
+.poster-sorter.sticked {
+  @media (min-width: 900px) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: var(--shadow-md);
+  }
 }
 
 .poster-sorter-field,
@@ -35,4 +49,3 @@
     width: 100%;
   }
 }
-

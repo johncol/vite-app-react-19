@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { PosterSorterButtonGroup } from "./PosterSorterButtonGroup";
+import { useSticked } from "../../shared/useSticked";
 import "./PosterSorter.css";
 
 export const PosterSorter = ({ sortBy }) => {
   const [field, setField] = useState("id");
   const [order, setOrder] = useState("ASC");
+  const isSticked = useSticked();
 
   const handleFieldChange = (newField) => {
     setField(newField);
@@ -51,7 +53,7 @@ export const PosterSorter = ({ sortBy }) => {
   ];
 
   return (
-    <div className="poster-sorter">
+    <div className={`poster-sorter ${isSticked ? "sticked" : ""}`}>
       <div className="poster-sorter-field">
         <label className="poster-sorter-label">Sort by:</label>
         <PosterSorterButtonGroup options={fieldOptions} />
