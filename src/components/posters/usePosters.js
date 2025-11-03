@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { posters } from "../../api/posters";
 
 export const usePosters = () => {
+  const [_, startTransition] = useTransition();
   const [sortedPosters, setSortedPosters] = useState(posters);
 
   const sortBy = (field, order) => {
@@ -17,7 +18,9 @@ export const usePosters = () => {
       return order === "DESC" ? -comparison : comparison;
     });
 
-    setSortedPosters(sorted);
+    startTransition(() => {
+      setSortedPosters(sorted);
+    });
   };
 
   return {
